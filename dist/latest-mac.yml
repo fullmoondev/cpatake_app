@@ -1,0 +1,12 @@
+version: 1.0.0
+files:
+  - url: CP-Atake-Desktop-1.0.0-mac.zip
+    sha512: A2aMp1QiC9IyT21v6vC+6XK3uvpc22KLo+RxNKhmHOo5JVzONz8mbmzEJEeVx6bY9XGAmKWUUoSLd6W6uXZrFA==
+    size: 103141302
+    blockMapSize: 106289
+  - url: CP-Atake-Desktop-1.0.0.dmg
+    sha512: IFHCLkVSAZSyhP3Y7VqlBtjreFKZ5cnoo5BO3NVvnpWGHRQB+PepyvLN5PNYRSx0FJyvUHmENTN0YEIafgq29w==
+    size: 106209646
+path: CP-Atake-Desktop-1.0.0-mac.zip
+sha512: A2aMp1QiC9IyT21v6vC+6XK3uvpc22KLo+RxNKhmHOo5JVzONz8mbmzEJEeVx6bY9XGAmKWUUoSLd6W6uXZrFA==
+releaseDate: '2021-01-16T23:36:13.434Z'
