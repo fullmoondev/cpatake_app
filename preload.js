@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'https://cpatake.waddlepenguins.tk/play/client.html';}
+function redirect(){window.location.href = 'https://client.cpatake.tk/';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
     if(url.includes('waddlepenguins.tk') == false){redirect();}
