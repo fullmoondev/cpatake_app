@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'https://client.cpatake.tk/';}
+function redirect(){window.location.href = 'https://web.cpatake.net/';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-    if(url.includes('waddlepenguins.tk') == false){redirect();}
+    if(url.includes('cpatake.net') == false){redirect();}
   });
