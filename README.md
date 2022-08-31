@@ -1,6 +1,5 @@
 # CP Atake App
 
-# The original client no longer connects to Cozy Penguin's game servers -  as the game has closed. Feel free to use this client for your own CPPS, as long as you attribute AltoDev.
 CP Atake's app has so many features, including:
 - Automatically clearing the users' cache when the application is launched (parties and features update instantly!)
 - Discord Rich Presence support. Have a shiny Discord status when playing
