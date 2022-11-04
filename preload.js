@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'https://web.cpatake.net/';}
+function redirect() {window.location.href = 'https://cpelemental-client.dink.cf/';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-    if(url.includes('cpatake.net') == false){redirect();}
-  });
+  if (url.includes('dink.cf') === false) {redirect();}
+});

@@ -1,37 +1,54 @@
 {
-  "name": "cpatake",
-  "version": "1.0.0",
-  "description": "Desktop client for cpatake.waddlepenguins.tk - Created by AltoDev.",
+  "name": "cpatakeapp",
+  "version": "3.1.1",
+  "description": "Desktop app for Club Penguin Atake.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
-    "build-mac": "electron-builder build --mac --publish never",
-    "appveyor-build": "electron-builder build --win --publish onTagOrDraft"
+    "make-win": "electron-builder build --win --publish never",
+    "make-mac": "electron-builder build --mac --publish never",
+    "make-linux": "electron-builder build --linux --publish never",
+    "make-win-publish": "electron-builder build --win --publish onTagOrDraft",
+    "make-mac-publish": "electron-builder build --mac --publish onTagOrDraft",
+    "make-linux-publish": "electron-builder build --linux --publish onTagOrDraft"
   },
   "bugs": {
     "url": "https://github.com/WaddlePenguins/cpatake_app/issues"
   },
   "homepage": "https://github.com/WaddlePenguins/cpatake_app#readme",
   "repository": "https://github.com/WaddlePenguins/cpatake_app",
-  "author": "Waddle Penguins / AltoDev (the original version)",
-  "license": "CC0-1.0",
+  "author": "Moonlight Studios, daniel11420/The Frosty Development Team",
+  "license": "BSD-2-Clause",
   "devDependencies": {
-    "electron": "^15.5.5",
-    "electron-builder": "^22.2.0",
-    "electron-is-dev": "^1.1.0"
+    "electron": "^8.5.2",
+    "electron-builder": "^22.7.0"
   },
   "dependencies": {
-    "discord-rpc": "^3.2.0",
+    "discord-rpc": "^3.1.0",
     "electron-is-dev": "^1.1.0",
-    "electron-updater": "^4.2.0"
+    "electron-updater": "^4.2.0",
+    "fs": "0.0.1-security",
+    "minimist": "^1.2.6"
   },
   "build": {
-    "appId": "com.waddlepenguins.cpadesktop",
-    "productName": "CP Atake Desktop",
+    "appId": "pl.moonlightstudios.cpatakeapp",
+    "productName": "Club Penguin Atake App",
     "asar": "false",
     "win": {
       "publish": "github"
+    },
+    "mac": {
+      "publish": "github"
+    },
+    "linux": {
+      "target": "AppImage",
+      "publish": "github"
+    },
+    "dmg": {
+      "window": {
+        "width": "540",
+        "height": "380"
+      }
     }
   }
 }

@@ -1,9 +1,18 @@
 directories:
   output: dist
   buildResources: build
-appId: com.waddlepenguins.cpadesktop
-productName: CP Atake Desktop
+appId: pl.moonlightstudios.cpelementalapp
+productName: Club Penguin Elemental App
 asar: false
 win:
   publish: github
-electronVersion: 6.1.7
+mac:
+  publish: github
+linux:
+  target: AppImage
+  publish: github
+dmg:
+  window:
+    width: 540
+    height: 380
+electronVersion: 8.5.2
