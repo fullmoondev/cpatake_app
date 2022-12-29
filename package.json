@@ -1,6 +1,6 @@
 {
   "name": "cpatakeapp",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "Desktop app for Club Penguin Atake.",
   "main": "main.js",
   "scripts": {

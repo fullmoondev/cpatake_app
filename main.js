@@ -36,13 +36,15 @@ switch (process.platform) {
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
 let playPages = [
-  ["Main", "https://3.cpatake.net/1/?from=client3.1-switcher"], 
-  ["AS3", "https://3.cpatake.net/redirects/3.1/as3"], 
-  ["AS2", "https://3.cpatake.net/redirects/3.1/as2"],
-  ["AS1", "https://3.cpatake.net/redirects/3.1/as1"],
-  ["TV", "https://3.cpatake.net/redirects/3.1/tv"],
-  ["EP", "https://3.cpatake.net/redirects/3.1/ep"],
-  ["AS2 (CPPSCreator)", "https://3.cpatake.net/redirects/3.1/as2/cc"]
+  ["Home", "https://butterfly.cpatake.dink.cf/start/4.0"], 
+  ["AS3", "https://butterfly.cpatake.dink.cf/redirects/4.0/as3"], 
+  ["AS2", "https://butterfly.cpatake.dink.cf/redirects/4.0/as2"],
+  ["AS1", "https://butterfly.cpatake.dink.cf/redirects/4.0/as1"],
+  ["TV", "https://butterfly.cpatake.dink.cf/redirects/4.0/tv"],
+  ["EP", "https://butterfly.cpatake.dink.cf/redirects/4.0/ep"],
+  ["PC", "https://butterfly.cpatake.dink.cf/redirects/4.0/pc"],
+  ["PC3", "https://butterfly.cpatake.dink.cf/redirects/4.0/pc3"],
+  ["AS2 (CPPSCreator)", "https://butterfly.cpatake.dink.cf/redirects/4.0/as2/cc"]
 ]
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -72,7 +74,7 @@ function makeMenu() {
       dialog.showMessageBox({
         type: "info",
         buttons: ["Ok"],
-        title: "About CP Atake App",
+        title: "About Club Penguin Atake App",
         message: "Club Penguin Atake Desktop App\nClub Penguin Atake © Moonlight Studios.\nBase client: © 2020 daniel11420 / the Frosty Team\nLicense:\n" + fs.readFileSync('resources/app/LICENSE')
       });
     }
@@ -93,7 +95,7 @@ function makeMenu() {
     }
   }));
   fsmenu.append(new MenuItem({
-    label: 'Layout switcher',
+    label: 'Version switcher',
     type: 'submenu',
     submenu: makeLayoutSwitcher()
   }));
@@ -128,9 +130,10 @@ function createWindow () {
     }
   });
 
+  
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('https://3.cpatake.net/1/');
+  mainWindow.loadURL('https://butterfly.cpatake.dink.cf/start/4.0');
 
   mainWindow.webContents.on('will-navigate', handleRedirect);
   mainWindow.webContents.on('new-window', handleRedirect);
@@ -140,11 +143,11 @@ function createWindow () {
   rpc.on('ready', () => {
     rpc.setActivity({
       details: 'cpatake.net', 
-      state: 'Desktop App',
+      state: 'Desktop App 4.0',
       startTimestamp,
-      largeImageKey: 'applargeimage',
-      //largeImageText: "LARGE IMAGE TEXT",
-      smallImageKey: "appsmallimage"
+      largeImageKey: 'dynamic3-big',
+      largeImageText: "Experience all Club Penguin eras in one game!\nJoin Club Penguin Atake now!",
+      smallImageKey: "dynamic3-small"
       //smallImageText: "SMALL IMAGE TEXT"
     });
   });

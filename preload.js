@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'https://3.cpatake.net/1/';}
+function redirect(){window.location.href = 'https://butterfly.cpatake.dink.cf/start/4.0';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-    if(url.includes('cpatake.net') == false){redirect();}
+    if(url.includes('dink.cf') == false){redirect();}
   });
