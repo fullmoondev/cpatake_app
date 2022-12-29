@@ -10,6 +10,7 @@ const gotTheLock = app.requestSingleInstanceLock()
 const startTimestamp = new Date();
 
 const buttons = [
+  { label: 'Website', url: 'https://cpatake.dink.cf' },
   { label: 'Discord', url: 'https://discord.gg/Yaj3wrSsPW' }
 ]
 
@@ -57,7 +58,7 @@ function setDiscordPresence() {
       details: checkVersionPlayed(),
       state: 'Desktop App 4.0',
       startTimestamp,
-      largeImageKey: 'dynamic3-big',
+      largeImageKey: 'prerelease',
       buttons: buttons
   }).catch(console.error);
 }
@@ -111,7 +112,7 @@ function setupZonePresence(zoneId, penguinName) {
       details: penguinName,
       state: roomIdToName[zoneId] || 'Desktop App 4.0',
       startTimestamp,
-      largeImageKey: roomIdToImage[zoneId] || 'dynamic3-big',
+      largeImageKey: roomIdToImage[zoneId] || 'prerelease',
       largeImageText: checkVersionPlayed(),
       buttons: button
   }).catch(console.error);
@@ -192,6 +193,11 @@ function handleRedirect(event, url) {
 function checkVersionPlayed() {
   let currentURL = mainWindow.webContents.getURL();
 
+  if (currentURL.includes('as1-cpa')) {
+    // AS1 client
+    return 'AS1';
+  }
+
   if (currentURL.includes('as2-cpa')) {
       // This is the AS2 client.
       return 'AS2';
@@ -200,6 +206,26 @@ function checkVersionPlayed() {
   if (currentURL.includes('as3-cpa')) {
     // AS3 client
     return 'AS3';
+  }
+
+  if (currentURL.includes('ep-cpa')) {
+    // Experimental Penguins client
+    return 'EP';
+  }
+
+  if (currentURL.includes('pc-cpa')) {
+    // Penguin Chat client
+    return 'PC';
+  }
+
+  if (currentURL.includes('pc3-cpa')) {
+    // Penguin Chat 3 client
+    return 'PC3';
+  }
+
+  if (currentURL.includes('cpataketv')) {
+    // Club Penguin Atake TV client
+    return 'TV';
   }
 
   return 'Selecting game version';
