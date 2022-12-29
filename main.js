@@ -183,7 +183,7 @@ function clearCache() {
 }
 
 function handleRedirect(event, url) {
-  if (!url.includes("cpatake.dink.cf")) {
+  if (!url.includes("dink.cf")) {
     event.preventDefault();
     shell.openExternal(url);
   }
