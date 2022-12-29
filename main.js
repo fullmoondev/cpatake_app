@@ -1,4 +1,4 @@
-const {app, BrowserWindow, dialog, Menu, MenuItem, shell} = require('electron');
+const {app, BrowserWindow, dialog, Menu, MenuItem, shell, ipcMain} = require('electron');
 const isDev = require('electron-is-dev');
 const { autoUpdater } = require('electron-updater');
 const DiscordRPC = require('discord-rpc');
@@ -7,6 +7,11 @@ const fs = require('fs');
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const gotTheLock = app.requestSingleInstanceLock()
+const startTimestamp = new Date();
+
+const buttons = [
+  { label: 'Discord', url: 'https://discord.gg/Yaj3wrSsPW' }
+]
 
 if (!gotTheLock) {
   app.quit()
@@ -36,8 +41,8 @@ switch (process.platform) {
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
 let playPages = [
-  ["Home", "https://butterfly.cpatake.dink.cf/start/4.0"], 
-  ["AS3", "https://butterfly.cpatake.dink.cf/redirects/4.0/as3"], 
+  ["Home", "https://butterfly.cpatake.dink.cf/start/4.0"],
+  ["AS3", "https://butterfly.cpatake.dink.cf/redirects/4.0/as3"],
   ["AS2", "https://butterfly.cpatake.dink.cf/redirects/4.0/as2"],
   ["AS1", "https://butterfly.cpatake.dink.cf/redirects/4.0/as1"],
   ["TV", "https://butterfly.cpatake.dink.cf/redirects/4.0/tv"],
@@ -46,6 +51,71 @@ let playPages = [
   ["PC3", "https://butterfly.cpatake.dink.cf/redirects/4.0/pc3"],
   ["AS2 (CPPSCreator)", "https://butterfly.cpatake.dink.cf/redirects/4.0/as2/cc"]
 ]
+
+function setDiscordPresence() {
+  rpc.setActivity({
+      details: checkVersionPlayed(),
+      state: 'Desktop App 4.0',
+      startTimestamp,
+      largeImageKey: 'dynamic3-big',
+      buttons: buttons
+  }).catch(console.error);
+}
+
+function setupZonePresence(zoneId, penguinName) {
+  var roomIdToName = {
+      100: 'Town Center',
+      110: 'Coffee Shop',
+      111: 'Book Room',
+      120: 'Night Club',
+      121: checkVersionPlayed() == 'AS2' ? 'Dance Lounge' : 'Arcade',
+      952: 'Dance Contest',
+      900: 'Astro Barrier',
+      909: 'Thin Ice',
+      320: 'Dojo',
+      130: checkVersionPlayed() == 'AS2' ? 'Gift Shop' : 'Clothes Shop',
+      959: 'Smoothie Smash',
+      300: 'The Plaza',
+      310: 'Pet Shop',
+      955: 'Puffle Launch',
+      956: 'Bits & Bolts',
+      998: 'Card Jitsu',
+      951: 'Sensei',
+      211: 'Everyday Phoning Facility',
+      323: 'EPF Command Room'
+  }
+
+  var roomIdToImage = {
+      100: checkVersionPlayed() == 'AS2' ? 'town_2006_ice_rink' : 'town_2012_ice_rink',
+      110: checkVersionPlayed() == 'AS2' ? 'coffee_shop_as2' : 'coffee_shop_2012',
+      111: checkVersionPlayed() == 'AS2' ? 'book_room_2005' : 'book_room_2012',
+      120: checkVersionPlayed() == 'AS2' ? 'night_club_as2' : 'dance_club_july_2014',
+      121: checkVersionPlayed() == 'AS2' ? 'dance_lounge_2006' : 'arcade',
+      952: 'dance_contest_logo',
+      900: 'astrobarrierstartscreennewfont',
+      909: 'thin_ice',
+      320: checkVersionPlayed() == 'AS2' ? 'dojo_2009' : 'dojo_2013',
+      130: checkVersionPlayed() == 'AS2' ? 'gift_shop_2009': 'clothes_shop',
+      959: 'ss_game_menu',
+      300: checkVersionPlayed() == 'AS2' ? 'plaza_before_2012' : 'plaza08july2015',
+      310: checkVersionPlayed() == 'AS2' ? 'pet_shop_2010' : 'pet_shop_2014',
+      955: 'puffle_launch',
+      956: 'bits-and-bolts',
+      998: 'card_jitsu_deck',
+      951: 'sensei',
+      211: 'everyday_phoning_facility',
+      323: 'epf_command_room_2010_2'
+  }
+
+  rpc.setActivity({
+      details: penguinName,
+      state: roomIdToName[zoneId] || 'Desktop App 4.0',
+      startTimestamp,
+      largeImageKey: roomIdToImage[zoneId] || 'dynamic3-big',
+      largeImageText: checkVersionPlayed(),
+      buttons: button
+  }).catch(console.error);
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -60,6 +130,7 @@ function makeLayoutSwitcher() {
       label: playPage[0],
       click: () => {
         mainWindow.loadURL(playPage[1]);
+        setDiscordPresence();
       }
     }));
   });
@@ -70,7 +141,7 @@ function makeMenu() {
   fsmenu = new Menu();
   fsmenu.append(new MenuItem({
     label: 'About',
-    click: () => { 
+    click: () => {
       dialog.showMessageBox({
         type: "info",
         buttons: ["Ok"],
@@ -82,14 +153,14 @@ function makeMenu() {
   fsmenu.append(new MenuItem({
     label: 'Fullscreen (Toggle)',
     accelerator: 'CmdOrCtrl+F',
-    click: () => { 
+    click: () => {
       let fsbool = (mainWindow.isFullScreen() ? false : true);
       mainWindow.setFullScreen(fsbool);
     }
   }));
   fsmenu.append(new MenuItem({
     label: 'Mute Audio (Toggle)',
-    click: () => { 
+    click: () => {
       let ambool = (mainWindow.webContents.audioMuted ? false : true);
       mainWindow.webContents.audioMuted = ambool;
     }
@@ -101,7 +172,7 @@ function makeMenu() {
   }));
   fsmenu.append(new MenuItem({
     label: 'Log Out',
-    click: () => { 
+    click: () => {
       mainWindow.reload();
     }
   }));
@@ -118,6 +189,40 @@ function handleRedirect(event, url) {
   }
 }
 
+function checkVersionPlayed() {
+  let currentURL = mainWindow.webContents.getURL();
+
+  if (currentURL.includes('as2-cpa')) {
+      // This is the AS2 client.
+      return 'AS2';
+  }
+
+  if (currentURL.includes('as3-cpa')) {
+    // AS3 client
+    return 'AS3';
+  }
+
+  return 'Selecting game version';
+}
+
+/**
+ * Activates Discord Rich Presence
+ * @returns {void}
+ */
+let rpc;
+function activateRPC() {
+    DiscordRPC.register('1014618385507692635');
+    rpc = new DiscordRPC.Client({
+        transport: 'ipc'
+    });
+    rpc.on('ready', () => {
+        setDiscordPresence();
+    });
+    rpc.login({
+        clientId: '1014618385507692635'
+    }).catch(console.error);
+}
+
 function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1513,
@@ -130,7 +235,7 @@ function createWindow () {
     }
   });
 
-  
+
   mainWindow.setMenu(null);
   clearCache();
   mainWindow.loadURL('https://butterfly.cpatake.dink.cf/start/4.0');
@@ -139,19 +244,7 @@ function createWindow () {
   mainWindow.webContents.on('new-window', handleRedirect);
 
   // RICH PRESENCE START
-  const clientId = '1014618385507692635'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
-  rpc.on('ready', () => {
-    rpc.setActivity({
-      details: 'cpatake.dink.cf', 
-      state: 'Desktop App 4.0',
-      startTimestamp,
-      largeImageKey: 'dynamic3-big',
-      largeImageText: "Experience all Club Penguin eras in one game!\nJoin Club Penguin Atake now!",
-      smallImageKey: "dynamic3-small"
-      //smallImageText: "SMALL IMAGE TEXT"
-    });
-  });
-  rpc.login({ clientId }).catch(console.error);
+  activateRPC();
 
   //mainWindow.webContents.openDevTools();
 
@@ -180,3 +273,8 @@ app.on('activate', function () {
 
 
 setInterval(clearCache, 1000*60*5);
+
+// Discord Rich Presence
+ipcMain.on('setDiscordZone', function (event, zoneId, penguinName) {
+  setupZonePresence(zoneId, penguinName);
+});
