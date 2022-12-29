@@ -112,7 +112,7 @@ function clearCache() {
 }
 
 function handleRedirect(event, url) {
-  if (!url.includes("cpatake.net")) {
+  if (!url.includes("cpatake.dink.cf")) {
     event.preventDefault();
     shell.openExternal(url);
   }
@@ -142,7 +142,7 @@ function createWindow () {
   const clientId = '1014618385507692635'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: 'cpatake.net', 
+      details: 'cpatake.dink.cf', 
       state: 'Desktop App 4.0',
       startTimestamp,
       largeImageKey: 'dynamic3-big',

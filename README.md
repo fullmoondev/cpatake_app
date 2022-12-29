@@ -1,7 +1,7 @@
 <h1 align="center">
 CP Atake App</h1>
 
-> Desktop client for cpatake.net
+> Desktop client for cpatake.dink.cf
 
 
 ### For Developers
