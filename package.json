@@ -1,6 +1,6 @@
 {
   "name": "cpatakeapp",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Desktop app for Club Penguin Atake.",
   "main": "main.js",
   "category": "Game",
