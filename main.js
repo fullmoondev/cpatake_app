@@ -36,15 +36,16 @@ switch (process.platform) {
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
 let playPages = [
-  ["Home", "https://butterfly.cpatake.dink.cf/start/4.0.1"], 
-  ["AS3", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/as3"], 
-  ["AS2", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/as2"],
-  ["AS1", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/as1"],
-  ["TV", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/tv"],
-  ["EP", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/ep"],
-  ["PC", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/pc"],
-  ["PC3", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/pc3"],
-  ["AS2 (CPPSCreator)", "https://butterfly.cpatake.dink.cf/redirects/4.0.1/as2/cc"]
+  ["Home", "https://butterfly-cpa.dink.cf/start/4.2"], 
+  ["AS3", "https://butterfly-cpa.dink.cf/redirects/4.2/as3"], 
+  ["AS2", "https://butterfly-cpa.dink.cf/redirects/4.2/as2"],
+  ["AS1", "https://butterfly-cpa.dink.cf/redirects/4.2/as1"],
+  ["TV", "https://butterfly-cpa.dink.cf/redirects/4.2/tv"],
+  ["Radio", "https://butterfly-cpa.dink.cf/redirects/4.2/radio"],
+  ["EP", "https://butterfly-cpa.dink.cf/redirects/4.2/ep"],
+  ["PC", "https://butterfly-cpa.dink.cf/redirects/4.2/pc"],
+  ["PC3", "https://butterfly-cpa.dink.cf/redirects/4.2/pc3"],
+  ["E-Reader", "https://butterfly-cpa.dink.cf/redirects/4.2/ereader"]
 ]
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -133,7 +134,7 @@ function createWindow () {
   
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('https://butterfly.cpatake.dink.cf/start/4.0.1?os=linux');
+  mainWindow.loadURL('https://butterfly-cpa.dink.cf/start/4.2?os=linux');
 
   mainWindow.webContents.on('will-navigate', handleRedirect);
   mainWindow.webContents.on('new-window', handleRedirect);
@@ -143,9 +144,9 @@ function createWindow () {
   rpc.on('ready', () => {
     rpc.setActivity({
       details: 'cpatake.dink.cf', 
-      state: 'Linux Desktop App 4.0.1',
+      state: 'Linux Desktop App 4.2',
       startTimestamp,
-      largeImageKey: 'static4_0_1-big',
+      largeImageKey: 'static4_1-big',
       largeImageText: "Experience all Club Penguin eras in one game!\nJoin Club Penguin Atake now!",
       //smallImageKey: "dynamic4-small",
       //smallImageText: ";o"
