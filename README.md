@@ -44,6 +44,6 @@ This project is under the [BSD 2-Clause license](https://github.com/frostygg/des
 ✕ 3.1.1 - November 19, 2022<br>
 ✕ 3.2 - December 1, 2022<br>
 ✕ 4.0 - January 13, 2023 [Blast Off 2.0 release, cpatake.net -> cpatake.dink.cf]<br>
-✓ 4.1 - April 17, 2023<br>
-✓ 4.1.1 - May 27, 2023<br>
+✓ 4.0.1 - April 17, 2023<br>
+✓ 4.1 - May 27, 2023<br>
 ❤️ 4.2 - July 10, 2023 [CPPSCreator closure, introdcution of the E-Reader to the Eras switcher]<br>
