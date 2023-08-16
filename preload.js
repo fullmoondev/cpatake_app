@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'https://butterfly-cpa.dink.cf/start/4.2';}
+function redirect(){window.location.href = 'https://butterfly.cpatake.boo/start/4.3';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-    if(url.includes('dink.cf') == false){redirect();}
+    if(url.includes('cpatake.boo') == false){redirect();}
   });

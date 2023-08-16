@@ -36,16 +36,16 @@ switch (process.platform) {
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
 let playPages = [
-  ["Home", "https://butterfly-cpa.dink.cf/start/4.2"], 
-  ["AS3", "https://butterfly-cpa.dink.cf/redirects/4.2/as3"], 
-  ["AS2", "https://butterfly-cpa.dink.cf/redirects/4.2/as2"],
-  ["AS1", "https://butterfly-cpa.dink.cf/redirects/4.2/as1"],
-  ["TV", "https://butterfly-cpa.dink.cf/redirects/4.2/tv"],
-  ["Radio", "https://butterfly-cpa.dink.cf/redirects/4.2/radio"],
-  ["EP", "https://butterfly-cpa.dink.cf/redirects/4.2/ep"],
-  ["PC", "https://butterfly-cpa.dink.cf/redirects/4.2/pc"],
-  ["PC3", "https://butterfly-cpa.dink.cf/redirects/4.2/pc3"],
-  ["E-Reader", "https://butterfly-cpa.dink.cf/redirects/4.2/ereader"]
+  ["Home", "https://butterfly.cpatake.boo/start/4.3"], 
+  ["AS3", "https://butterfly.cpatake.boo/redirects/4.3/as3"], 
+  ["AS2", "https://butterfly.cpatake.boo/redirects/4.3/as2"],
+  ["AS1", "https://butterfly.cpatake.boo/redirects/4.3/as1"],
+  ["TV", "https://butterfly.cpatake.boo/redirects/4.3/tv"],
+  ["Radio", "https://butterfly.cpatake.boo/redirects/4.3/radio"],
+  ["EP", "https://butterfly.cpatake.boo/redirects/4.3/ep"],
+  ["PC", "https://butterfly.cpatake.boo/redirects/4.3/pc"],
+  ["PC3", "https://butterfly.cpatake.boo/redirects/4.3/pc3"],
+  ["E-Reader", "https://butterfly.cpatake.boo/redirects/4.3/ereader"]
 ]
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -134,7 +134,7 @@ function createWindow () {
   
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('https://butterfly-cpa.dink.cf/start/4.2?os=linux');
+  mainWindow.loadURL('https://butterfly.cpatake.boo/start/4.3?os=windows');
 
   mainWindow.webContents.on('will-navigate', handleRedirect);
   mainWindow.webContents.on('new-window', handleRedirect);
@@ -143,10 +143,10 @@ function createWindow () {
   const clientId = '1014618385507692635'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: 'cpatake.dink.cf', 
-      state: 'Linux Desktop App 4.2',
+      details: 'www.cpatake.boo', 
+      state: 'Windows Desktop App 4.3',
       startTimestamp,
-      largeImageKey: 'static4_1-big',
+      largeImageKey: 'logoicon-apollo',
       largeImageText: "Experience all Club Penguin eras in one game!\nJoin Club Penguin Atake now!",
       //smallImageKey: "dynamic4-small",
       //smallImageText: ";o"
