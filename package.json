@@ -1,6 +1,6 @@
 {
   "name": "CPAtake",
-  "productName": "Club Penguin Atake App",
+  "productName": "CPAtake",
   "version": "5.0.0",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
   "main": "src/main.js",
@@ -49,8 +49,8 @@
         }, {
           "name": "@electron-forge/maker-flatpak",
           "config": {
-            "genericName": "CPAtake",
-            "productName": "CPAtake",
+            "genericName": "Club Penguin Atake App",
+            "productName": "Club Penguin Atake App",
             "categories": [
               "Game"
             ],
