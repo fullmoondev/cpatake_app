@@ -1,55 +1,138 @@
 {
-  "name": "cpatakeapp",
-  "version": "4.3.0",
-  "description": "Desktop app for Club Penguin Atake.",
-  "main": "main.js",
-  "category": "Game",
+  "name": "CPAtake",
+  "productName": "Club Penguin Atake App",
+  "version": "5.0.0",
+  "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
+  "main": "src/main.js",
   "scripts": {
-    "start": "electron .",
-    "make-win": "electron-builder build --win --publish never",
-    "make-mac": "electron-builder build --mac --publish never",
-    "make-linux": "electron-builder build --linux --publish never",
-    "make-win-publish": "electron-builder build --win --publish onTagOrDraft",
-    "make-mac-publish": "electron-builder build --mac --publish onTagOrDraft",
-    "make-linux-publish": "electron-builder build --linux --publish onTagOrDraft"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "publish-windows": "electron-forge publish",
+    "publish-mac": "electron-forge publish --arch=x64",
+    "publish-git": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
-  "bugs": {
-    "url": "https://github.com/WaddlePenguins/cpatake_app/issues"
-  },
-  "homepage": "https://github.com/WaddlePenguins/cpatake_app#readme",
-  "repository": "https://github.com/WaddlePenguins/cpatake_app",
-  "author": "Moonlight Studios, daniel11420/The Frosty Development Team",
-  "license": "BSD-2-Clause",
-  "devDependencies": {
-    "electron": "^8.5.2",
-    "electron-builder": "^22.7.0"
-  },
-  "dependencies": {
-    "discord-rpc": "^3.2.0",
-    "electron-is-dev": "^1.1.0",
-    "electron-updater": "^4.2.0",
-    "fs": "0.0.1-security",
-    "minimist": "^1.2.6"
+  "keywords": [],
+  "author": "Moonlight Studios",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "lib/icons/icon.icns"
+      },
+      "makers": [{
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "moonlightstudios",
+            "authors": "Moonlight Studios",
+            "loadingGif": "./src/assets/default-splash.gif",
+            "setupIcon": "./lib/icons/icon.ico"
+          }
+        }, {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        }, {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "format": "ULFO"
+          }
+        }, {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        }, {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }, {
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "genericName": "Club Penguin Atake App",
+            "productName": "Club Penguin Atake App",
+            "categories": [
+              "Game"
+            ],
+            "modules": [{
+                "name": "zypak",
+                "sources": [{
+                    "type": "git",
+                    "url": "https://github.com/refi64/zypak",
+                    "tag": "v2022.04"
+                  }
+                ]
+              }
+            ],
+            "runtimeVersion": "22.08",
+            "baseVersion": "22.08",
+            "icon": "./lib/icons/icon.ico"
+          }
+
+        }
+      ],
+      "publishers": [{
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "MoonlightStudiosInt",
+              "name": "cpatake_app"
+            },
+            "prerelease": false
+          }
+        }
+      ]
+    }
   },
   "build": {
+    "extraResources": [{
+        "from": "./lib/",
+        "to": "lib",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
     "appId": "pl.moonlightstudios.cpatakeapp",
     "productName": "Club Penguin Atake App",
-    "asar": "false",
-    "win": {
-      "publish": "github"
-    },
+    "copyright": "Copyright © 2023 ${author}",
     "mac": {
-      "publish": "github"
+      "icon": "./lib/icons/icon.icns",
+      "category": "lib.games.cpatake"
     },
-    "linux": {
-      "target": "AppImage",
-      "publish": "github"
+    "win": {
+      "icon": "./lib/icons/icon.png"
     },
-    "dmg": {
-      "window": {
-        "width": "540",
-        "height": "380"
+    "directories": {
+      "buildResources": "lib"
+    },
+    "protocols": [{
+        "name": "cpatake",
+        "schemes": [
+          "cpatake"
+        ]
       }
-    }
+    ]
+  },
+  "dependencies": {
+    "async-dialog": "0.0.1",
+    "dialogs": "^2.0.1",
+    "discord-rpc": "^4.0.1",
+    "electron-prompt": "^1.6.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1",
+    "es5-ext": "<=0.10.53"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-appx": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.64",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
+    "electron": "11.1.1"
   }
 }

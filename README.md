@@ -1,33 +1,8 @@
-<h1 align="center">
-CP Atake App</h1>
+# About
 
-> Desktop client for cpatake.boo
+This application is based on the [New Club Penguin application](https://github.com/New-Club-Penguin/NewCP-App/), which is licensed on the MIT license.
 
-
-### For Developers
-You need [node.js](https://nodejs.org). The latest version is recommended but others work too.
-
-Installation:
-```sh
-git clone https://github.com/frostygg/desktop
-cd desktop
-npm i
-npm start
-```
-Building:
-```sh
-npm run make-win
-npm run make-mac
-npm run make-linux
-```
-
-## 📝 License
-Edits made by Moonlight Studios for Club Penguin Atake.
-Based on the Frosty.gg Desktop App. Credits:
-Copyright © 2020 daniel11420 / the Frosty Team
-This project is under the [BSD 2-Clause license](https://github.com/frostygg/desktop/blob/master/LICENSE).
-
-## Releases
+# Releases
 ✕ = no longer supported<br>
 ✓ = older version, still supported<br>
 ❤️ = latest version, supported<br>
@@ -47,4 +22,5 @@ This project is under the [BSD 2-Clause license](https://github.com/frostygg/des
 ✕ 4.0.1 - April 17, 2023<br>
 ✕ 4.1 - May 27, 2023<br>
 ✕ 4.2 - July 10, 2023 [CPPSCreator closure, introdcution of the E-Reader to the Eras switcher]<br>
-✓❤️ 4.3 - August 17, 2023 [cpatake.dink.cf -> cpatake.boo]
+✕ 4.3 - August 17, 2023 (release rolled back, unreleased)[cpatake.dink.cf -> cpatake.boo]<br>
+❤️ 5.0 - August 17, 2023 [cpatake.dink.cf -> cpatake.boo, client codebase changed] {internally 4.3}
