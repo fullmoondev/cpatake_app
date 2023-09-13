@@ -5,10 +5,10 @@ RPC.register(APPLICATION_ID);
 
 function onRpcReady() {
     rpcClient.setActivity({
-        state: "Waddling",
+        state: "Discovering the island",
         details: "www.cpatake.boo",
         startTimestamp: Date.now(),
-        largeImageKey: "logoicon-apollo",
+        largeImageKey: "logoicon-monarch",
         instance: true,
     });
 }

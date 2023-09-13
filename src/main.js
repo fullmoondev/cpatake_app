@@ -24,6 +24,8 @@ const ALLOWED_ORIGINS = [
   "https://support.fullmoon.dev",
   "https://status.fullmoon.dev",
   "https://link.fullmoon.dev",
+  "https://pqa.cpatake.tk",
+  "https://protected.fullmoon.dev",
 ];
 
 const pluginPaths = {
@@ -90,7 +92,7 @@ const createWindow = () => {
 
   new Promise((resolve) =>
     setTimeout(() => {
-      mainWindow.loadURL("https://butterfly.cpatake.boo/start/4.3");
+      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.1");
       resolve();
     }, 5000)
   );

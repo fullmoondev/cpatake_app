@@ -23,4 +23,5 @@ This application is based on the [New Club Penguin application](https://github.c
 ✕ 4.1 - May 27, 2023<br>
 ✕ 4.2 - July 10, 2023 [CPPSCreator closure, introdcution of the E-Reader to the Eras switcher]<br>
 ✕ 4.3 - August 17, 2023 (release rolled back, unreleased)[cpatake.dink.cf -> cpatake.boo]<br>
-❤️ 5.0 - August 17, 2023 [cpatake.dink.cf -> cpatake.boo, client codebase changed] {internally 4.3}
+✓ 5.0 - August 17, 2023 [cpatake.dink.cf -> cpatake.boo, client codebase changed] {internally 4.3}
+❤️ 5.0.1 - September 13, 2023 [Adobe Flash updated, fixed AS3 bugs]
