@@ -40,7 +40,7 @@ const pluginName = pluginPaths[process.platform];
 console.log("pluginName", pluginName);
 
 app.commandLine.appendSwitch("ppapi-flash-path", pluginName);
-app.commandLine.appendSwitch("ppapi-flash-version", "31.0.0.122");
+app.commandLine.appendSwitch("ppapi-flash-version", "32.0.0.303");
 app.commandLine.appendSwitch("ignore-certificate-errors");
 
 let mainWindow;
@@ -90,9 +90,11 @@ const createWindow = () => {
 
   mainWindow.webContents.session.clearHostResolverCache();
 
+  mainWindow.webContents.session.clearCache();
+
   new Promise((resolve) =>
     setTimeout(() => {
-      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.1");
+      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.2");
       resolve();
     }, 5000)
   );
