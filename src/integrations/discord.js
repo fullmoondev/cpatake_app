@@ -8,7 +8,7 @@ function onRpcReady() {
         state: "Discovering the island",
         details: "www.cpatake.boo",
         startTimestamp: Date.now(),
-        largeImageKey: "logoicon-monarch",
+        largeImageKey: "logoicon-onelive",
         instance: true,
     });
 }

@@ -94,7 +94,7 @@ const createWindow = () => {
 
   new Promise((resolve) =>
     setTimeout(() => {
-      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.2");
+      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.3");
       resolve();
     }, 5000)
   );
