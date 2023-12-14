@@ -1,7 +1,7 @@
 {
   "name": "CPAtake",
   "productName": "CPAtake",
-  "version": "5.0.3",
+  "version": "5.0.3.1",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
   "main": "src/main.js",
   "scripts": {
@@ -25,7 +25,7 @@
       "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "moonlightstudios",
+            "name": "cpatake",
             "authors": "Moonlight Studios",
             "loadingGif": "./src/assets/default-splash.gif",
             "setupIcon": "./lib/icons/icon.ico"

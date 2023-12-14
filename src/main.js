@@ -21,11 +21,12 @@ const ALLOWED_ORIGINS = [
   "https://www.cpatake.boo",
   "https://cpatake.boo",
   "https://www.fullmoon.dev",
+  "https://fullmoon.dev",
   "https://support.fullmoon.dev",
   "https://status.fullmoon.dev",
   "https://link.fullmoon.dev",
-  "https://pqa.cpatake.tk",
-  "https://protected.fullmoon.dev",
+  "https://pqa.cpatake.boo",
+  "https://protected.fullmoon.dev"
 ];
 
 const pluginPaths = {
