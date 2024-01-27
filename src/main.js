@@ -6,7 +6,7 @@ const path = require("path");
 if (require("electron-squirrel-startup")) app.quit();
 
 // Check for updates except for macOS
-if (process.platform != "darwin") require("update-electron-app")({ repo: "MoonlightStudiosInt/cpatake_app" });
+if (process.platform != "darwin") require("update-electron-app")({ repo: "fullmoondev/cpatake_app" });
 
 const ALLOWED_ORIGINS = [
   "https://butterfly.cpatake.boo",
@@ -95,7 +95,7 @@ const createWindow = () => {
 
   new Promise((resolve) =>
     setTimeout(() => {
-      mainWindow.loadURL("https://butterfly.cpatake.boo/start/5.0.3");
+      mainWindow.loadURL("https://www.cpatake.boo/i/play");
       resolve();
     }, 5000)
   );

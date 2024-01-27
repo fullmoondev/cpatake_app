@@ -26,5 +26,6 @@ This application is based on the [New Club Penguin application](https://github.c
 ✕ 5.0 - August 17, 2023 [cpatake.dink.cf -> cpatake.boo, client codebase changed] {internally 4.3}<br>
 ✕ 5.0.1 - September 13, 2023 [Adobe Flash updated, fixed AS3 bugs]<br>
 ✕ 5.0.2 - November 10, 2023 [minor updates, fixed Flash versioning, cache settings modification]<br>
-✓ 5.0.3 - December 1, 2023 [minor updates, icon + design update, deleted old code and assets, Discord Intergration modified, added other new features]<br>
-❤️ 5.1.0 - December 14, 2023 [changed allowed hosts and started using semver versioning]
+✕ 5.0.3 - December 1, 2023 [minor updates, icon + design update, deleted old code and assets, Discord Intergration modified, added other new features]<br>
+✕ 5.1.0 - December 14, 2023 [changed allowed hosts and started using semver versioning]<br>
+❤️ 5.2.0 - January 27, 2024 [GitHub repository update and design update]

@@ -1,7 +1,7 @@
 {
   "name": "CPAtake",
   "productName": "CPAtake",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
   "main": "src/main.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "Moonlight Studios",
+  "author": "Fullmoon",
   "license": "MIT",
   "config": {
     "forge": {
@@ -26,7 +26,7 @@
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "cpatake",
-            "authors": "Moonlight Studios",
+            "authors": "Fullmoon",
             "loadingGif": "./src/assets/default-splash.gif",
             "setupIcon": "./lib/icons/icon.ico"
           }
@@ -70,7 +70,7 @@
           "name": "@electron-forge/publisher-github",
           "config": {
             "repository": {
-              "owner": "MoonlightStudiosInt",
+              "owner": "fullmoondev",
               "name": "cpatake_app"
             },
             "prerelease": false
@@ -90,7 +90,7 @@
     ],
     "appId": "pl.moonlightstudios.cpatakeapp",
     "productName": "Club Penguin Atake App",
-    "copyright": "Copyright © 2023 ${author}",
+    "copyright": "Copyright © 2024 ${author}",
     "mac": {
       "icon": "./lib/icons/icon.icns",
       "category": "lib.games.cpatake"
