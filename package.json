@@ -1,7 +1,7 @@
 {
   "name": "CPAtake",
   "productName": "CPAtake",
-  "version": "5.2.0",
+  "version": "5.2.2",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
   "main": "src/main.js",
   "scripts": {
