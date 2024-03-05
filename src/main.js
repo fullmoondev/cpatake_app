@@ -41,7 +41,7 @@ const pluginName = pluginPaths[process.platform];
 console.log("pluginName", pluginName);
 
 app.commandLine.appendSwitch("ppapi-flash-path", pluginName);
-app.commandLine.appendSwitch("ppapi-flash-version", "32.0.0.303");
+app.commandLine.appendSwitch("ppapi-flash-version", "34.0.0.301");
 app.commandLine.appendSwitch("ignore-certificate-errors");
 
 let mainWindow;
