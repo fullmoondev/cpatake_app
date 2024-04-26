@@ -1,5 +1,5 @@
 {
-  "name": "CPAtake",
+  "name": "ClubPenguinAtake",
   "productName": "ClubPenguinAtake",
   "version": "5.2.4",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
@@ -25,7 +25,7 @@
       "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "cpatake",
+            "name": "clubpenguinatake",
             "authors": "Fullmoon",
             "loadingGif": "./src/assets/default-splash.gif",
             "setupIcon": "./lib/icons/icon.ico"
@@ -93,7 +93,7 @@
     "copyright": "Copyright © 2024 ${author}",
     "mac": {
       "icon": "./lib/icons/icon.icns",
-      "category": "lib.games.cpatake"
+      "category": "lib.games.clubpenguinatake"
     },
     "win": {
       "icon": "./lib/icons/icon.png"
