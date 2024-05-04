@@ -30,5 +30,6 @@ This application is based on the [New Club Penguin application](https://github.c
 ✕ 5.1.0 - December 14, 2023 [changed allowed hosts and started using semver versioning]<br>
 ✕ 5.2.0 - January 27, 2024 [GitHub repository update and design update]<br>
 ✕ 5.2.2 - March 5, 2024 [March Patch Update, safety issues fixed]<br>
-✓ 5.2.3 - March 6, 2024 [hotfix for March Patch Update]<br>
-❤️ 5.2.4 - April 26, 2024 [loading screen update, origins update, other changes]
+✕ 5.2.3 - March 6, 2024 [hotfix for March Patch Update]<br>
+✓ 5.2.4 - April 26, 2024 [loading screen update, origins update, other changes]<br>
+❤️ 5.2.5 - May 4, 2024 [origins update]

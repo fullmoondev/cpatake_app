@@ -26,7 +26,8 @@ const ALLOWED_ORIGINS = [
   "https://support.fullmoon.dev", // defunct
   "https://status.fullmoon.dev", // defunct
   "https://link.fullmoon.dev",
-  "https://pqa.cpatake.boo" // test1/public quality assurance host
+  "https://pqa.cpatake.boo", // public quality assurance host
+  "https://labs.cpatake.boo" // labs host
 ];
 
 const pluginPaths = {
