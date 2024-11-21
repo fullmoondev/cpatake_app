@@ -25,7 +25,7 @@ const ALLOWED_ORIGINS = [
   "https://status.fullmoon.dev", // defunct
   "https://link.fullmoon.dev", // defunct
   "https://g.live.net.co",
-  "https://www.live.net.co"
+  "https://www.live.net.co",
   "https://labs.cpatake.boo"
 ];
 
