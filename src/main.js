@@ -9,8 +9,7 @@ if (require("electron-squirrel-startup")) app.quit();
 if (process.platform != "darwin") require("update-electron-app")({ repo: "fullmoondev/cpatake_app" });
 
 const ALLOWED_ORIGINS = [
-  "https://butterfly.cpatake.boo", // host before one live update 3
-  "https://app.cpatake.boo", // host for olup3 & newer
+  "https://app.cpatake.boo",
   "https://as1.cpatake.boo",
   "https://as2.cpatake.boo",
   "https://as3.cpatake.boo",
@@ -22,12 +21,12 @@ const ALLOWED_ORIGINS = [
   "https://www.cpatake.boo",
   "https://cpatake.boo",
   "https://www.fullmoon.dev",
-  "https://fullmoon.dev",
   "https://support.fullmoon.dev", // defunct
   "https://status.fullmoon.dev", // defunct
-  "https://link.fullmoon.dev",
-  "https://pqa.cpatake.boo", // public quality assurance host
-  "https://labs.cpatake.boo" // labs host
+  "https://link.fullmoon.dev", // defunct
+  "https://g.live.net.co",
+  "https://www.live.net.co"
+  "https://labs.cpatake.boo"
 ];
 
 const pluginPaths = {
@@ -42,7 +41,7 @@ const pluginName = pluginPaths[process.platform];
 console.log("pluginName", pluginName);
 
 app.commandLine.appendSwitch("ppapi-flash-path", pluginName);
-app.commandLine.appendSwitch("ppapi-flash-version", "34.0.0.301");
+app.commandLine.appendSwitch("ppapi-flash-version", "32.0.0.371");
 app.commandLine.appendSwitch("ignore-certificate-errors");
 
 let mainWindow;
