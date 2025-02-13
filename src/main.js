@@ -16,16 +16,17 @@ const ALLOWED_ORIGINS = [
   "https://ep.cpatake.boo",
   "https://pc.cpatake.boo",
   "https://pc3.cpatake.boo",
-  "https://tv.cpatake.boo", // tv host
-  "https://l.tv.cpatake.boo", // tv link redirector
+  "https://tv.cpatake.boo",
+  "https://l.tv.cpatake.boo",
   "https://www.cpatake.boo",
   "https://cpatake.boo",
   "https://www.fullmoon.dev",
-  "https://support.fullmoon.dev", // defunct
-  "https://status.fullmoon.dev", // defunct
-  "https://link.fullmoon.dev", // defunct
+  "https://support.fullmoon.dev",
+  "https://status.fullmoon.dev",
+  "https://link.fullmoon.dev",
   "https://g.live.net.co",
   "https://www.live.net.co",
+  "https://id.live.net.co",
   "https://labs.cpatake.boo"
 ];
 

@@ -20,13 +20,20 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "lib/icons/icon.icns"
+        "icon": "lib/icons/icon.icns",
+        "name": "ClubPenguinAtake",
+        "platform": {
+          "linux": {
+            "name": "ClubPenguinAtake"
+          }
+        }
       },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "clubpenguinatake",
+            "productName": "Club Penguin Atake App",
             "authors": "Fullmoon",
             "loadingGif": "./src/assets/default-splash.gif",
             "setupIcon": "./lib/icons/icon.ico"
@@ -49,8 +56,8 @@
         {
           "name": "@electron-forge/maker-flatpak",
           "config": {
-            "genericName": "ClubPenguinAtakeApp",
-            "productName": "ClubPenguinAtakeApp",
+            "genericName": "ClubPenguinAtake",
+            "productName": "ClubPenguinAtake",
             "categories": [
               "Game"
             ],
@@ -97,7 +104,10 @@
       }
     ],
     "appId": "pl.moonlightstudios.cpatakeapp",
-    "productName": "ClubPenguinAtakeApp",
+    "productName": "Club Penguin Atake App",
+    "linux": {
+      "productName": "ClubPenguinAtake"
+    },
     "copyright": "Copyright © 2025 ${author}",
     "mac": {
       "icon": "./lib/icons/icon.icns",
