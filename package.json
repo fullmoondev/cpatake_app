@@ -22,6 +22,7 @@
       "packagerConfig": {
         "icon": "lib/icons/icon.icns",
         "name": "ClubPenguinAtake",
+        "executableName": "clubpenguinatake",
         "platform": {
           "linux": {
             "name": "ClubPenguinAtake"
@@ -47,7 +48,13 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "options": {
+              "name": "clubpenguinatake",
+              "productName": "ClubPenguinAtake",
+              "genericName": "ClubPenguinAtake"
+            }
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
