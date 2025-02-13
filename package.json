@@ -1,7 +1,7 @@
 {
-  "name": "ClubPenguinAtake",
-  "productName": "ClubPenguinAtake",
-  "version": "5.2.6",
+  "name": "clubpenguinatake",
+  "productName": "Club Penguin Atake App",
+  "version": "5.2.7",
   "description": "Experience all Club Penguin eras in one game, join Club Penguin Atake now!",
   "main": "src/main.js",
   "scripts": {
@@ -22,7 +22,8 @@
       "packagerConfig": {
         "icon": "lib/icons/icon.icns"
       },
-      "makers": [{
+      "makers": [
+        {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "clubpenguinatake",
@@ -30,18 +31,22 @@
             "loadingGif": "./src/assets/default-splash.gif",
             "setupIcon": "./lib/icons/icon.ico"
           }
-        }, {
+        },
+        {
           "name": "@electron-forge/maker-zip",
           "platforms": [
             "darwin"
           ]
-        }, {
+        },
+        {
           "name": "@electron-forge/maker-deb",
           "config": {}
-        }, {
+        },
+        {
           "name": "@electron-forge/maker-rpm",
           "config": {}
-        }, {
+        },
+        {
           "name": "@electron-forge/maker-flatpak",
           "config": {
             "genericName": "Club Penguin Atake App",
@@ -49,9 +54,11 @@
             "categories": [
               "Game"
             ],
-            "modules": [{
+            "modules": [
+              {
                 "name": "zypak",
-                "sources": [{
+                "sources": [
+                  {
                     "type": "git",
                     "url": "https://github.com/refi64/zypak",
                     "tag": "v2022.04"
@@ -63,10 +70,10 @@
             "baseVersion": "22.08",
             "icon": "./lib/icons/icon.ico"
           }
-
         }
       ],
-      "publishers": [{
+      "publishers": [
+        {
           "name": "@electron-forge/publisher-github",
           "config": {
             "repository": {
@@ -80,7 +87,8 @@
     }
   },
   "build": {
-    "extraResources": [{
+    "extraResources": [
+      {
         "from": "./lib/",
         "to": "lib",
         "filter": [
@@ -90,7 +98,7 @@
     ],
     "appId": "pl.moonlightstudios.cpatakeapp",
     "productName": "Club Penguin Atake App",
-    "copyright": "Copyright © 2024 ${author}",
+    "copyright": "Copyright © 2025 ${author}",
     "mac": {
       "icon": "./lib/icons/icon.icns",
       "category": "lib.games.clubpenguinatake"
@@ -101,7 +109,8 @@
     "directories": {
       "buildResources": "lib"
     },
-    "protocols": [{
+    "protocols": [
+      {
         "name": "cpatake",
         "schemes": [
           "cpatake"
@@ -128,5 +137,6 @@
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "electron": "11.5.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
