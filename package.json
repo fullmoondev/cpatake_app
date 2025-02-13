@@ -49,8 +49,8 @@
         {
           "name": "@electron-forge/maker-flatpak",
           "config": {
-            "genericName": "Club Penguin Atake App",
-            "productName": "Club Penguin Atake App",
+            "genericName": "ClubPenguinAtakeApp",
+            "productName": "ClubPenguinAtakeApp",
             "categories": [
               "Game"
             ],
