@@ -1,4 +1,5 @@
 const RPC = require('discord-rpc');
+const https = require('https');
 const rpcClient = new RPC.Client({ transport: 'ipc' });
 const APPLICATION_ID = '1014618385507692635';
 RPC.register(APPLICATION_ID);
@@ -6,25 +7,65 @@ RPC.register(APPLICATION_ID);
 let states = [];
 let currentStateIndex = 0;
 let stateInterval;
+let currentActivity = null;
 
-async function fetchTextContent(url) {
-    try {
-        const response = await fetch(url);
-        return await response.text();
-    } catch (error) {
-        console.error('Error fetching text content:', error);
-        return null;
+function rotateState() {
+    if (states.length === 0) return;
+    
+    currentStateIndex = (currentStateIndex + 1) % states.length;
+    rpcClient.setActivity({
+        state: states[currentStateIndex],
+        details: currentActivity?.details || "www.cpatake.boo",
+        largeImageKey: currentActivity?.largeImageKey || "logoicon-onelive",
+        startTimestamp: currentActivity?.startTimestamp || Date.now(),
+        instance: true,
+    });
+}
+
+async function onRpcReady() {
+    const rpcData = await updateStates();
+    if (!rpcData) return;
+
+    currentActivity = {
+        state: rpcData.state,
+        details: rpcData.details,
+        startTimestamp: Date.now(),
+        largeImageKey: rpcData.largeImageKey,
+    };
+
+    rpcClient.setActivity(currentActivity);
+
+    if (states.length > 1) {
+        stateInterval = setInterval(rotateState, 3 * 60 * 1000);
     }
 }
 
-async function fetchJsonContent(url) {
-    try {
-        const response = await fetch(url);
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching JSON content:', error);
-        return null;
-    }
+function fetchTextContent(url) {
+    return new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+            let data = '';
+            res.on('data', (chunk) => data += chunk);
+            res.on('end', () => resolve(data.trim()));
+            res.on('error', reject);
+        }).on('error', reject);
+    });
+}
+
+function fetchJsonContent(url) {
+    return new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+            let data = '';
+            res.on('data', (chunk) => data += chunk);
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (error) {
+                    reject(error);
+                }
+            });
+            res.on('error', reject);
+        }).on('error', reject);
+    });
 }
 
 async function updateStates() {
@@ -51,36 +92,6 @@ async function updateStates() {
         details: rpcInfo.details,
         largeImageKey: rpcInfo.largeImageKey
     };
-}
-
-function rotateState() {
-    if (states.length === 0) return;
-    
-    currentStateIndex = (currentStateIndex + 1) % states.length;
-    rpcClient.setActivity({
-        state: states[currentStateIndex],
-        details: rpcClient.activity.details,
-        largeImageKey: rpcClient.activity.largeImageKey,
-        startTimestamp: rpcClient.activity.startTimestamp,
-        instance: true,
-    });
-}
-
-async function onRpcReady() {
-    const rpcData = await updateStates();
-    if (!rpcData) return;
-
-    rpcClient.setActivity({
-        state: rpcData.state,
-        details: rpcData.details,
-        startTimestamp: Date.now(),
-        largeImageKey: rpcData.largeImageKey,
-        instance: true,
-    });
-
-    if (states.length > 1) {
-        stateInterval = setInterval(rotateState, 3 * 60 * 1000);
-    }
 }
 
 function initDiscordRichPresence() {
