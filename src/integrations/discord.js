@@ -16,7 +16,7 @@ function rotateState() {
     rpcClient.setActivity({
         state: states[currentStateIndex],
         details: currentActivity?.details || "www.cpatake.boo",
-        largeImageKey: currentActivity?.largeImageKey || "prerelease",
+        largeImageKey: currentActivity?.largeImageKey || "logoicon-onelive",
         startTimestamp: currentActivity?.startTimestamp || Date.now(),
         instance: true,
     });
