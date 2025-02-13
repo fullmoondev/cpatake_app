@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'RedHatDisplay-Regular';
-  src: url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.eot');
-  src: url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-      url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.woff2') format('woff2'),
-      url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.woff') format('woff'),
-      url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.ttf') format('truetype'),
-      url('https://cdn.fullmoon.dev/fonts/redhatdisplay/RedHatDisplay-Regular.svg#RedHatDisplay-Regular') format('svg');
+  src: url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.eot');
+  src: url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.woff2') format('woff2'),
+      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.woff') format('woff'),
+      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.ttf') format('truetype'),
+      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.svg#RedHatDisplay-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
