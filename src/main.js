@@ -8,28 +8,6 @@ if (require("electron-squirrel-startup")) app.quit();
 // Check for updates except for macOS
 if (process.platform != "darwin") require("update-electron-app")({ repo: "fullmoondev/cpatake_app" });
 
-const ALLOWED_ORIGINS = [
-  "https://app.cpatake.boo",
-  "https://as1.cpatake.boo",
-  "https://as2.cpatake.boo",
-  "https://as3.cpatake.boo",
-  "https://ep.cpatake.boo",
-  "https://pc.cpatake.boo",
-  "https://pc3.cpatake.boo",
-  "https://tv.cpatake.boo",
-  "https://l.tv.cpatake.boo",
-  "https://www.cpatake.boo",
-  "https://cpatake.boo",
-  "https://www.fullmoon.dev",
-  "https://support.fullmoon.dev",
-  "https://status.fullmoon.dev",
-  "https://link.fullmoon.dev",
-  "https://g.live.net.co",
-  "https://www.live.net.co",
-  "https://id.live.net.co",
-  "https://labs.cpatake.boo"
-];
-
 const pluginPaths = {
   win32: path.join(path.dirname(__dirname), "lib/pepflashplayer.dll"),
   darwin: path.join(path.dirname(__dirname), "lib/PepperFlashPlayer.plugin"),
@@ -82,8 +60,12 @@ const createWindow = () => {
     discord_integration.initDiscordRichPresence();
   });
 
+  function isAllowedOrigin(origin) {
+    return /^(https?:\/\/)?([a-zA-Z0-9-]+\.)*(dink\.cf|fullmoon\.dev|live\.net\.co|cpatake\.boo)$/.test(origin);
+  }
   mainWindow.webContents.on("will-navigate", (event, urlString) => {
-    if (!ALLOWED_ORIGINS.includes(new URL(urlString).origin)) {
+    const origin = new URL(urlString).origin;
+    if (!isAllowedOrigin(origin)) {
       event.preventDefault();
     }
   });

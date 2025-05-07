@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'RedHatDisplay-Regular';
-  src: url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.eot');
-  src: url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.woff2') format('woff2'),
-      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.woff') format('woff'),
-      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.ttf') format('truetype'),
-      url('https://c.live.net.co/fonts/redhatdisplay/RedHatDisplay-Regular.svg#RedHatDisplay-Regular') format('svg');
+  font-family: 'Metropolis';
+  src: url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.eot');
+  src: url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.eot?#iefix') format('embedded-opentype'),
+      url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.woff2') format('woff2'),
+      url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.woff') format('woff'),
+      url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.ttf') format('truetype'),
+      url('https://c.live.net.co/fonts/metropolis/Metropolis-Regular.svg#Metropolis-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: "Segoe UI", "RedHatDisplay-Regular", Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", "Metropolis", Helvetica, Arial, sans-serif;
   margin: auto;
   padding: 2rem;
 }
